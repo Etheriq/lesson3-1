@@ -13,10 +13,10 @@
 		5C7386F01BD534CF002CDAF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C7386EE1BD534CF002CDAF3 /* Main.storyboard */; };
 		5C7386F21BD534CF002CDAF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C7386F11BD534CF002CDAF3 /* Assets.xcassets */; };
 		5C7386F51BD534CF002CDAF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C7386F31BD534CF002CDAF3 /* LaunchScreen.storyboard */; };
-		5C7387061BD534FD002CDAF3 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7386FF1BD534FD002CDAF3 /* Card.m */; settings = {ASSET_TAGS = (); }; };
-		5C7387071BD534FD002CDAF3 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7387011BD534FD002CDAF3 /* Deck.m */; settings = {ASSET_TAGS = (); }; };
-		5C7387081BD534FD002CDAF3 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7387031BD534FD002CDAF3 /* PlayingCard.m */; settings = {ASSET_TAGS = (); }; };
-		5C7387091BD534FD002CDAF3 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7387051BD534FD002CDAF3 /* PlayingCardDeck.m */; settings = {ASSET_TAGS = (); }; };
+		5C7387061BD534FD002CDAF3 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7386FF1BD534FD002CDAF3 /* Card.m */; };
+		5C7387071BD534FD002CDAF3 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7387011BD534FD002CDAF3 /* Deck.m */; };
+		5C7387081BD534FD002CDAF3 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7387031BD534FD002CDAF3 /* PlayingCard.m */; };
+		5C7387091BD534FD002CDAF3 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7387051BD534FD002CDAF3 /* PlayingCardDeck.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +146,7 @@
 				TargetAttributes = {
 					5C7386E11BD534CF002CDAF3 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = V9B3PW8ZEP;
 					};
 				};
 			};
@@ -253,7 +254,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -290,7 +291,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -301,9 +302,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Matcho/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.geekhub.Matcho;
+				PRODUCT_BUNDLE_IDENTIFIER = com.geekhub.Matcho.Lesson3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -312,9 +314,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Matcho/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.geekhub.Matcho;
+				PRODUCT_BUNDLE_IDENTIFIER = com.geekhub.Matcho.Lesson3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

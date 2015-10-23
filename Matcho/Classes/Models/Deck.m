@@ -29,6 +29,11 @@
 	[self addCard:card atTop:NO];
 }
 
+- (NSUInteger) getCountCards {
+    
+    return self.cards.count;
+}
+
 
 - (void)addCard:(Card *)card atTop:(BOOL)atTop {
 	if (atTop) {
@@ -39,8 +44,25 @@
 }
 
 - (Card *)drawRandomCard {
-	NSInteger randomCard = arc4random() % [self.cards count];
-	return self.cards[randomCard];
+    if (![self.cards count]) {
+        
+        return nil;
+    }
+    
+        int randomCardIndex = arc4random() % [self.cards count];
+        randomCardIndex = randomCardIndex == 0 ? randomCardIndex : randomCardIndex - 1;
+        Card *returnedCard = nil;
+        
+        if (randomCardIndex <= self.cards.count) {
+            returnedCard = self.cards[randomCardIndex];
+            [self.cards removeObjectAtIndex:randomCardIndex];
+        }
+        
+        NSLog(@"cards left %li", self.cards.count);
+    
+        returnedCard.class
+        
+        return returnedCard;
 }
 
 @end
