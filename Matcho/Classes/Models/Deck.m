@@ -39,8 +39,23 @@
 }
 
 - (Card *)drawRandomCard {
-	NSInteger randomCard = arc4random() % [self.cards count];
-	return self.cards[randomCard];
+    if (![self.cards count]) {
+        
+        return nil;
+    }
+    
+        int randomCardIndex = arc4random() % [self.cards count];
+        randomCardIndex = randomCardIndex == 0 ? randomCardIndex : randomCardIndex - 1;
+        Card *returnedCard = nil;
+        
+        if (randomCardIndex <= self.cards.count) {
+            returnedCard = self.cards[randomCardIndex];
+            [self.cards removeObjectAtIndex:randomCardIndex];
+        }
+        
+        NSLog(@"cards left %i", self.cards.count);
+        
+        return returnedCard;
 }
 
 @end
