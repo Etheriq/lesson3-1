@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) PlayingCardDeck *deck;
 
+@property (weak, nonatomic) IBOutlet UILabel *leftCardsCounter;
 @property (weak, nonatomic) IBOutlet UIButton *cardButton;
 
 @end
@@ -36,6 +37,9 @@
 						  forState:UIControlStateNormal];
 	} else {
 		Card *card = [self.deck drawRandomCard];
+        
+        self.leftCardsCounter.text = [NSString stringWithFormat:@"left cards: %li", [self.deck getCountCards]];
+        
 		[sender setTitle:card.contents
 				forState:UIControlStateNormal];
 		[sender setBackgroundImage:[UIImage imageNamed:@"cardfront"]

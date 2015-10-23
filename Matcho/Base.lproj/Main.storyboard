@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -28,10 +29,19 @@
                                     <action selector="cardButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0bz-7u-uBf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="left cards: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZ1-HV-QdB">
+                                <rect key="frame" x="30" y="372" width="325" height="20"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nZ1-HV-QdB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="T9M-td-sSY"/>
+                            <constraint firstItem="nZ1-HV-QdB" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="XuT-Ea-iRh"/>
                             <constraint firstItem="Emo-9d-CLG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YoA-hT-GVz"/>
                             <constraint firstItem="Emo-9d-CLG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ptH-Rb-3zx"/>
                         </constraints>
@@ -39,10 +49,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="cardButton" destination="Emo-9d-CLG" id="9fV-ka-Avt"/>
+                        <outlet property="leftCardsCounter" destination="nZ1-HV-QdB" id="ILO-qx-mwt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="321.5" y="348.5"/>
         </scene>
     </scenes>
     <resources>

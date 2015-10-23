@@ -15,6 +15,8 @@
 - (void)addCard:(Card *)card atTop:(BOOL)atTop;
 - (void)addCard:(Card *)card;
 
+- (NSUInteger) getCountCards;
+
 - (Card *)drawRandomCard;
 
 @end

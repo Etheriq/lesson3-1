@@ -29,6 +29,11 @@
 	[self addCard:card atTop:NO];
 }
 
+- (NSUInteger) getCountCards {
+    
+    return self.cards.count;
+}
+
 
 - (void)addCard:(Card *)card atTop:(BOOL)atTop {
 	if (atTop) {
@@ -53,7 +58,7 @@
             [self.cards removeObjectAtIndex:randomCardIndex];
         }
         
-        NSLog(@"cards left %i", self.cards.count);
+        NSLog(@"cards left %li", self.cards.count);
         
         return returnedCard;
 }
