@@ -73,6 +73,7 @@
 }
 
 - (void) viewDidLoad {
+    [super viewDidLoad];
     self.leftCardsCounter.text = [NSString stringWithFormat:@"left cards: %li", [self.deck getCountCards]];
     self.suiteCounter.text = [self getSuiteConterStatistics:clubsCounter andDiamonds:diamondsCounter andHearts:heartsCounter andSpades:spadesCounter];
 }
