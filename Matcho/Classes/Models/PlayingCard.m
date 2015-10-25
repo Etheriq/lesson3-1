@@ -71,6 +71,10 @@ NSString *const spades = @"♠";
         if (self.rank == card.rank) {
             result += 4;
         }
+        
+        if ([self.suit isEqualToString:card.suit] && self.rank == card.rank) {
+            result +=10;
+        }
     }
     
     return result;
