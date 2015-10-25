@@ -14,8 +14,13 @@
 
 @implementation PlayingCard
 
+NSString *const clubs = @"♣";
+NSString *const diamonds = @"♦";
+NSString *const hearts = @"♥";
+NSString *const spades = @"♠";
+
 + (NSArray *)suits {
-    return @[@"♣", @"♠", @"♦", @"♥"];
+    return @[clubs, spades, diamonds, hearts];
 }
 
 + (NSArray *)ranks {
@@ -29,7 +34,7 @@
 -(instancetype) initWithSuit:(NSString *)suit andRank:(NSInteger)rank {
 	self = [super init];
 	if (self) {
-		self.suit = suit;
+        self.suit = suit;
 		self.rank = rank;
 	}
 	return self;

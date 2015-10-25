@@ -13,6 +13,11 @@
 @property (nonatomic, strong) NSString *suit;
 @property (nonatomic) NSUInteger rank;
 
+extern NSString *const clubs;
+extern NSString *const diamonds;
+extern NSString *const hearts;
+extern NSString *const spades;
+
 -(instancetype) initWithSuit:(NSString *)suit andRank:(NSInteger)rank;
 
 + (NSArray *)suits;
