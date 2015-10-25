@@ -43,6 +43,13 @@
 - (PlayingCardDeck *)deck {
 	if (!_deck) {
 		_deck = [[PlayingCardDeck alloc] init];
+        
+        PlayingCard *customCard1 = [[PlayingCard alloc] initWithSuit:@"♣" andRank:8];
+        [_deck addCard:customCard1];
+        
+        PlayingCard *customCard2 = [[PlayingCard alloc] initWithSuit:@"X" andRank:777];
+        [_deck addCard:customCard2];
+        
 	}
 	return _deck;
 }
@@ -114,9 +121,11 @@
     } else if (self.card.suit == hearts) {
         heartsCounter++;
         [self.cardButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    } else {
+    } else if (self.card.suit == spades) {
         spadesCounter++;
         [self.cardButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    } else {
+        [self.cardButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     }
 }
 
