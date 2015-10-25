@@ -61,17 +61,19 @@ NSString *const spades = @"♠";
 
 
 -(int) match:(NSArray *)otherCards {
-	PlayingCard *card = [otherCards firstObject];
-	
-	if ([self.suit isEqualToString:card.suit]) {
-		return 1;
-	}
-	
-	if (self.rank == card.rank) {
-		return 4;
-	}
-	
-	return 0;
+    int result = 0;
+    
+    for (PlayingCard *card in otherCards) {
+        if ([self.suit isEqualToString:card.suit]) {
+            result += 1;
+        }
+        
+        if (self.rank == card.rank) {
+            result += 4;
+        }
+    }
+    
+    return result;
 }
 
 
