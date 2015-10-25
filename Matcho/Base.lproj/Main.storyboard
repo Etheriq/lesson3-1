@@ -44,14 +44,24 @@
                                     <action selector="resetDeckButtonTaped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ah3-2j-90g"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="rr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PjD-1S-hoq">
+                                <rect key="frame" x="20" y="598" width="335" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nZ1-HV-QdB" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="10" id="AmF-JR-rw5"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nZ1-HV-QdB" secondAttribute="bottom" constant="20" id="J2U-1q-uxg"/>
+                            <constraint firstItem="PjD-1S-hoq" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="10" id="OdM-tE-Fdx"/>
                             <constraint firstItem="nZ1-HV-QdB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="T9M-td-sSY"/>
                             <constraint firstItem="Emo-9d-CLG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YoA-hT-GVz"/>
+                            <constraint firstItem="nZ1-HV-QdB" firstAttribute="top" secondItem="PjD-1S-hoq" secondAttribute="bottom" constant="10" id="aPd-yq-8jF"/>
+                            <constraint firstItem="PjD-1S-hoq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="av0-BE-EFb"/>
                             <constraint firstItem="Emo-9d-CLG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ptH-Rb-3zx"/>
                             <constraint firstItem="nZ1-HV-QdB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="zXr-z0-rDo"/>
                         </constraints>
@@ -60,6 +70,7 @@
                     <connections>
                         <outlet property="cardButton" destination="Emo-9d-CLG" id="9fV-ka-Avt"/>
                         <outlet property="leftCardsCounter" destination="nZ1-HV-QdB" id="ILO-qx-mwt"/>
+                        <outlet property="suiteConter" destination="PjD-1S-hoq" id="A5Q-pD-P9c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

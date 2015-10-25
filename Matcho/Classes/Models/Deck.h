@@ -8,6 +8,7 @@
 
 @import Foundation;
 
+#import "PlayingCard.h"
 #import "Card.h"
 
 @interface Deck : NSObject
@@ -17,6 +18,6 @@
 
 - (NSUInteger) getCountCards;
 
-- (Card *)drawRandomCard;
+- (PlayingCard *)drawRandomCard;
 
 @end

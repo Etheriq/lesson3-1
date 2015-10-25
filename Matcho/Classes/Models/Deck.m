@@ -7,6 +7,7 @@
 //
 
 #import "Deck.h"
+#import "PlayingCard.h"
 
 @interface Deck()
 
@@ -43,7 +44,7 @@
 	}
 }
 
-- (Card *)drawRandomCard {
+- (PlayingCard *)drawRandomCard {
     if (![self.cards count]) {
         
         return nil;
@@ -51,7 +52,7 @@
     
         int randomCardIndex = arc4random() % [self.cards count];
         randomCardIndex = randomCardIndex == 0 ? randomCardIndex : randomCardIndex - 1;
-        Card *returnedCard = nil;
+        PlayingCard *returnedCard = nil;
         
         if (randomCardIndex <= self.cards.count) {
             returnedCard = self.cards[randomCardIndex];
