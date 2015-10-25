@@ -86,16 +86,17 @@
             
             if (card.suit == clubs) {
                 clubsCounter++;
-                [self.cardButton setBackgroundColor:[UIColor grayColor]];
+                [self.cardButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             } else if (card.suit == diamonds) {
                 diamondsCounter++;
-                [self.cardButton setBackgroundColor:[UIColor redColor]];
+                [self.cardButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+
             } else if (card.suit == hearts) {
                 heartsCounter++;
-                [self.cardButton setBackgroundColor:[UIColor redColor]];
+                [self.cardButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
             } else {
                 spadesCounter++;
-                [self.cardButton setBackgroundColor:[UIColor grayColor]];
+                [self.cardButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             }
             
             self.suiteConter.text = [self getSuiteConterStatistics:clubsCounter andDiamonds:diamondsCounter andHearts:heartsCounter andSpades:spadesCounter];
