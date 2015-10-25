@@ -146,7 +146,6 @@
 				TargetAttributes = {
 					5C7386E11BD534CF002CDAF3 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = V9B3PW8ZEP;
 					};
 				};
 			};
@@ -307,6 +306,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.geekhub.Matcho.Lesson3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -319,6 +319,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.geekhub.Matcho.Lesson3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

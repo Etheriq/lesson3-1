@@ -59,8 +59,6 @@
         }
         
         NSLog(@"cards left %li", self.cards.count);
-    
-        returnedCard.class
         
         return returnedCard;
 }
