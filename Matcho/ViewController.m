@@ -13,7 +13,8 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) PlayingCardDeck *deck;
-@property (weak, nonatomic) IBOutlet UILabel *suiteConter;
+@property (nonatomic, strong) PlayingCard *card;
+@property (weak, nonatomic) IBOutlet UILabel *suiteCounter;
 @property (weak, nonatomic) IBOutlet UILabel *leftCardsCounter;
 @property (weak, nonatomic) IBOutlet UIButton *cardButton;
 @property (nonatomic) int clubsCounter;
@@ -48,18 +49,25 @@
 
 - (IBAction)resetDeckButtonTaped:(UIButton *)sender {
     self.deck = nil;
+    self.card = nil;
     self.deck = [[PlayingCardDeck alloc] init];
+    self.card = [self.deck drawRandomCard];
+    
+    [self setCardTitleColorAndCounter];
+    [self.cardButton setTitle:self.card.contents forState:UIControlStateNormal];
+    [self.cardButton setBackgroundImage:[UIImage imageNamed:@"cardfront"] forState:UIControlStateNormal];
+    
     self.leftCardsCounter.text = [NSString stringWithFormat:@"left cards: %li", [self.deck getCountCards]];
     clubsCounter = 0;
     diamondsCounter = 0;
     heartsCounter = 0;
     spadesCounter = 0;
-    self.suiteConter.text = [self getSuiteConterStatistics:clubsCounter andDiamonds:diamondsCounter andHearts:heartsCounter andSpades:spadesCounter];
+    self.suiteCounter.text = [self getSuiteConterStatistics:clubsCounter andDiamonds:diamondsCounter andHearts:heartsCounter andSpades:spadesCounter];
 }
 
 - (void) viewDidLoad {
     self.leftCardsCounter.text = [NSString stringWithFormat:@"left cards: %li", [self.deck getCountCards]];
-    self.suiteConter.text = [self getSuiteConterStatistics:clubsCounter andDiamonds:diamondsCounter andHearts:heartsCounter andSpades:spadesCounter];
+    self.suiteCounter.text = [self getSuiteConterStatistics:clubsCounter andDiamonds:diamondsCounter andHearts:heartsCounter andSpades:spadesCounter];
 }
 
 - (NSString *) getSuiteConterStatistics: (int) clubs andDiamonds: (int) diamonds andHearts: (int) hearts andSpades: (int) spades {
@@ -79,37 +87,37 @@
 						  forState:UIControlStateNormal];
 	} else {
         
-        PlayingCard *card = [self.deck drawRandomCard];
+        self.card = [self.deck drawRandomCard];
         
-        if (card) {
+        if (self.card) {
+            [self setCardTitleColorAndCounter];
             self.leftCardsCounter.text = [NSString stringWithFormat:@"left cards: %li", [self.deck getCountCards]];
+            self.suiteCounter.text = [self getSuiteConterStatistics:clubsCounter andDiamonds:diamondsCounter andHearts:heartsCounter andSpades:spadesCounter];
             
-            if (card.suit == clubs) {
-                clubsCounter++;
-                [self.cardButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            } else if (card.suit == diamonds) {
-                diamondsCounter++;
-                [self.cardButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-
-            } else if (card.suit == hearts) {
-                heartsCounter++;
-                [self.cardButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-            } else {
-                spadesCounter++;
-                [self.cardButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            }
-            
-            self.suiteConter.text = [self getSuiteConterStatistics:clubsCounter andDiamonds:diamondsCounter andHearts:heartsCounter andSpades:spadesCounter];
-            
-            [sender setTitle:card.contents
-                    forState:UIControlStateNormal];
-            [sender setBackgroundImage:[UIImage imageNamed:@"cardfront"]
-                              forState:UIControlStateNormal];
+            [sender setTitle:self.card.contents forState:UIControlStateNormal];
+            [sender setBackgroundImage:[UIImage imageNamed:@"cardfront"] forState:UIControlStateNormal];
         } else {
             self.leftCardsCounter.text = @"Desk is empty";
         }
 		
 	}
+}
+
+- (void) setCardTitleColorAndCounter {
+    if (self.card.suit == clubs) {
+        clubsCounter++;
+        [self.cardButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    } else if (self.card.suit == diamonds) {
+        diamondsCounter++;
+        [self.cardButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        
+    } else if (self.card.suit == hearts) {
+        heartsCounter++;
+        [self.cardButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    } else {
+        spadesCounter++;
+        [self.cardButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
 }
 
 @end
